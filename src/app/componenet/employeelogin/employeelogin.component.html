@@ -1,0 +1,56 @@
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+    <div class="card card0 border-0">
+        <div class="row d-flex">
+            <div class="col-lg-6">
+                <div class="card1 pb-5">
+                    <div class="row"> <img src="https://i.imgur.com/CXQmsmF.png" class="logo"> </div>
+                    <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="https://i.imgur.com/uNGdWHi.png" class="image"> </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card2 card border-0 px-4 py-5">
+                    <div class="row px-3 mb-4">
+                        <div class="line"></div> <small class="or text-center">Employee Login Portal</small>
+                        <div class="line"></div>
+                    </div>
+                    <div class="container">
+                        <div class="Form">
+                          <form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)"  class="needs-validation">
+                            <div class="form-group my-5">
+                              <label for="cname">Emp_Id</label>
+                              <input type = "text" name = "employeeId" placeholder= "Enter employeeId" class="form-control" ngModel required>
+                              <div class="valid-feedback"> Valid Id</div>
+                              <div class="invalid-feedback">Please fill out this field.</div>
+                  
+                            </div>    
+                       
+                            <div class="form-group my-5">
+                              <label for="pno">Password</label>
+                              <input type = "password" name = "password" placeholder= "Enter password" class="form-control" ngModel required>
+                              <div class="valid-feedback">Valid Password</div>
+                              <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input col-1" style="width:2px;" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label ms-3" for="flexCheckChecked">
+                                  Remember me
+                                </label>
+                              </div>
+
+                            <div class="d-grid col-5 mx-start my-5">
+                              <button type="submit" value = "submit"  class="btn btn-dark btn-lg"> Login </button>
+                            </div>
+                          </form>
+                        </div>
+                    
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-blue py-4">
+            <div class="row px-3"> <small class="ml-4 ml-sm-5 mb-2">For more information visits</small>
+            </div>
+        </div>
+    </div>
+</div>

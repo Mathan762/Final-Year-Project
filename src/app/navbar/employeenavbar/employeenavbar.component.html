@@ -1,0 +1,155 @@
+<div style="background-color: rgb(0, 60, 255); margin: 10px 10px; padding-left:10px; padding-right: 10px;padding-top:40px; height: 80px; position: sticky; border-radius: 10px;">
+  <div>
+      <nav class="navbar  navbar-expand-lg navbar-light bg-dark" style="border-radius: 23px; height: 80px;">
+        <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active text-light  ms-5 colorchange" aria-current="page"routerLink="/employee/product">Products</a>
+            <a class="nav-link text-light ms-5" routerLink="/employee/order">Orders</a>
+            <a class="nav-link text-light ms-5" routerLink="/employee/receiver">Receivers</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link text-light dropdown-toggle ms-5" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Perform Actions
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li> <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addPackageModal">Add Package details</button> </li>
+                <li> <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#updatePackageModal">Update Package details</button> </li>
+              </ul>
+            </li>
+            
+          </div>
+        </div>
+        <form class="d-flex justify-content-end">
+          <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success me-5" type="submit">Search</button>
+        </form>
+        <div class="d-flex justify-content-end"><button class="btn btn-lg bg-danger text-light" (click)="signOut()">Sign out</button></div>
+      </div>
+    </nav>
+    </div>
+</div>
+
+
+<div>
+  <!-- Add Package details Modal -->
+  <div class="modal fade" id="addPackageModal" tabindex="-1" aria-labelledby="addPackageModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addPackageModal">Add Package details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+            <div class="modal-body">
+                <div class="container">
+                <div class="Form">
+                  <form #packagedetails = "ngForm" (ngSubmit) = "addpackagedetails(packagedetails.value)"  class="needs-validation">
+                    <div class="form-group my-3">
+                        <label for="cname">Order Id</label>
+                        <input type = "text" name = "orderId" placeholder= "Enter OrderId" class="form-control" ngModel required>
+                        <div class="valid-feedback"> Valid Id</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="cname">Package Length</label>
+                        <input type = "number" name = "packagelength" placeholder= "Enter packagelength" class="form-control" ngModel required>
+                        <div class="valid-feedback"> Valid</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="cname">Package Width</label>
+                        <input type = "number" name = "packagewidth" placeholder= "Enter packagewidth" class="form-control" ngModel required>
+                        <div class="valid-feedback"> Valid</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="cname">Package height</label>
+                        <input type = "number" name = "packageheight" placeholder= "Enter packageheight" class="form-control" ngModel required>
+                        <div class="valid-feedback"> Valid</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="cname">Package Weight</label>
+                        <input type = "number" name = "packageweight" placeholder= "Enter packageweight" class="form-control" ngModel required>
+                        <div class="valid-feedback"> Valid</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="cname">Employee Id</label>
+                        <input type = "text" name = "employeeid" placeholder= "Enter employeeid" class="form-control" ngModel required>
+                        <div class="valid-feedback"> Valid Id</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                    <div class="text-center pt-1 mb-5 pb-1 my-3">
+                      <button class="btn btn-light btn-block fa-lg gradient-custom-2 mb-3" type="submit" value="submit">Save</button>
+                    </div>
+                  </form>
+                </div>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+    <!-- Update Package details Modal -->
+  <div class="modal fade" id="updatePackageModal" tabindex="-1" aria-labelledby="updatePackageModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updatePackageModal">Update Package details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+            <div class="modal-body">
+                <div class="container">
+                <div class="Form">
+                  <form #packagedetails = "ngForm" (ngSubmit) = "updatepackagedetails(packagedetails.value)"  class="needs-validation">
+                    <div class="form-group my-3">
+                        <label for="cname">Order Id</label>
+                        <input type = "text" name = "orderId" placeholder= "Enter OrderId" class="form-control" ngModel required>
+                        <div class="valid-feedback"> Valid Id</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="cname">Package Length</label>
+                        <input type = "number" name = "packagelength" placeholder= "Enter packagelength" class="form-control" ngModel required>
+                        <div class="valid-feedback"> Valid</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="cname">Package Width</label>
+                        <input type = "number" name = "packagewidth" placeholder= "Enter packagewidth" class="form-control" ngModel required>
+                        <div class="valid-feedback"> Valid</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="cname">Package height</label>
+                        <input type = "number" name = "packageheight" placeholder= "Enter packageheight" class="form-control" ngModel required>
+                        <div class="valid-feedback"> Valid</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="cname">Package Weight</label>
+                        <input type = "number" name = "packageweight" placeholder= "Enter packageweight" class="form-control" ngModel required>
+                        <div class="valid-feedback"> Valid</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="cname">Employee Id</label>
+                        <input type = "number" name = "employeeid" placeholder= "Enter employeeid" class="form-control" ngModel required>
+                        <div class="valid-feedback"> Valid Id</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                    <div class="text-center pt-1 mb-5 pb-1 my-3">
+                      <button class="btn btn-light btn-block fa-lg gradient-custom-2 mb-3" type="submit" value="submit">Update</button>
+                    </div>
+                  </form>
+                </div>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
