@@ -18,4 +18,8 @@ export class OrderComponent implements OnInit {
   signOut(): void {
     this.router.navigateByUrl('/login');
   }
+
+  addpackagedetails(packagedetails:any) {
+    alert("Successful")
+  }
 }

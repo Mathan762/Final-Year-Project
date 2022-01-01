@@ -1,0 +1,8 @@
+Dec 20, 2021 :
+    -- Need to remove Perform actions option in the Navbar (admin and employee) - Done
+    -- Add GPS Tracking option - Done
+    -- Create a modal when clicking on the order / receiver
+    -- Need to give option in the Modal to update the details
+    -- Add warehouse detials in the Orders page.
+    -- Add button for EMployee addition in the Admin Portal
+    -- Add option for IP whitelisting of Kits in Admin Portals

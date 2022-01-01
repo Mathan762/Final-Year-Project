@@ -1,9 +1,76 @@
 <app-employeenavbar></app-employeenavbar>
 
-<div class="container"  style="max-width:95%;">
-<table class="table table-hover my-5">
+<!-- Add Package details Modal -->
+<div class="modal fade" id="clickOrderModal" tabindex="-1" aria-labelledby="addPackageModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addPackageModal">Add Package details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="form">
+            <form #packagedetails="ngForm" (ngSubmit)="addpackagedetails(packagedetails.value)"
+              class="needs-validation">
+              <div class="form-group my-3">
+                <label for="cname">Order Id</label>
+                <input type="text" name="orderId" placeholder="Enter OrderId" class="form-control" ngModel required>
+                <div class="valid-feedback"> Valid Id</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+              <div class="form-group my-3">
+                <label for="cname">Package Length</label>
+                <input type="number" name="packagelength" placeholder="Enter packagelength" class="form-control" ngModel
+                  required>
+                <div class="valid-feedback"> Valid</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+              <div class="form-group my-3">
+                <label for="cname">Package Width</label>
+                <input type="number" name="packagewidth" placeholder="Enter packagewidth" class="form-control" ngModel
+                  required>
+                <div class="valid-feedback"> Valid</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+              <div class="form-group my-3">
+                <label for="cname">Package height</label>
+                <input type="number" name="packageheight" placeholder="Enter packageheight" class="form-control" ngModel
+                  required>
+                <div class="valid-feedback"> Valid</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+              <div class="form-group my-3">
+                <label for="cname">Package Weight</label>
+                <input type="number" name="packageweight" placeholder="Enter packageweight" class="form-control" ngModel
+                  required>
+                <div class="valid-feedback"> Valid</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+              <div class="form-group my-3">
+                <label for="cname">Employee Id</label>
+                <input type="text" name="employeeid" placeholder="Enter employeeid" class="form-control" ngModel
+                  required>
+                <div class="valid-feedback"> Valid Id</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+
+              <div class="text-center pt-1 mb-5 pb-1 my-3">
+                <button class="btn btn-light btn-block fa-lg gradient-custom-2 mb-3" type="submit"
+                  value="submit">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="max-width:95%;">
+  <table class="table table-hover my-5">
     <thead>
-    <tr>
+      <tr>
         <th scope="col">Order Id</th>
         <th scope="col">Product Id</th>
         <th scope="col">Rfid</th>
@@ -14,7 +81,7 @@
         <th scope="col">Status</th>
         <th scope="col">Created At</th>
         <th scope="col">Updated At</th>
-    </tr>
+      </tr>
     </thead>
     <tbody>
       <tr>
@@ -25,9 +92,12 @@
         <td scope="col">₹54,90,497</td>
         <td scope="col">27/10/2021</td>
         <td scope="col">Online payment</td>
-        <td scope="col" style="color: rgb(240, 173, 78);"> new <i _ngcontent-eby-c5="" class="fa fa-star-o ng-tns-c5-1"></i></td>
+        <td scope="col" style="color: rgb(240, 173, 78);"> new <i _ngcontent-eby-c5=""
+            class="fa fa-star-o ng-tns-c5-1"></i></td>
         <td scope="col">27/10/2021</td>
         <td scope="col">28/10/2021</td>
+        <td><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#clickOrderModal">
+            Show</button></td>
       </tr>
       <tr>
         <td scope="col">3076</td>
@@ -37,7 +107,8 @@
         <td scope="col">₹27,90,497</td>
         <td scope="col">10/11/2021</td>
         <td scope="col">Bank transfer</td>
-        <td scope="col" style="color: rgb(140, 140, 59);"> shipped <i _ngcontent-eby-c5="" class="fa fa-truck ng-tns-c5-1"></i></td>
+        <td scope="col" style="color: rgb(140, 140, 59);"> shipped <i _ngcontent-eby-c5=""
+            class="fa fa-truck ng-tns-c5-1"></i></td>
         <td scope="col">10/11/2021</td>
         <td scope="col">15/11/2021</td>
       </tr>
@@ -49,7 +120,8 @@
         <td scope="col">₹2,45,497</td>
         <td scope="col">29/08/2021</td>
         <td scope="col">Bank transfer</td>
-        <td scope="col" style="color: rgb(240, 173, 78);"> new <i _ngcontent-eby-c5="" class="fa fa-star-o ng-tns-c5-1"></i></td>
+        <td scope="col" style="color: rgb(240, 173, 78);"> new <i _ngcontent-eby-c5=""
+            class="fa fa-star-o ng-tns-c5-1"></i></td>
         <td scope="col">29/08/2021</td>
         <td scope="col">31/08/2021</td>
       </tr>
@@ -61,7 +133,8 @@
         <td scope="col">₹14,90,497</td>
         <td scope="col">11/12/2021</td>
         <td scope="col">Bank transfer</td>
-        <td scope="col" style="color: rgb(140, 140, 59);"> shipped <i _ngcontent-eby-c5="" class="fa fa-truck ng-tns-c5-1"></i></td>
+        <td scope="col" style="color: rgb(140, 140, 59);"> shipped <i _ngcontent-eby-c5=""
+            class="fa fa-truck ng-tns-c5-1"></i></td>
         <td scope="col">11/11/2021</td>
         <td scope="col">11/11/2021</td>
       </tr>
@@ -74,5 +147,5 @@
         <td>{{transaction_details.Amount }}</td>
     </tr>
     </tbody> -->
-</table>
+  </table>
 </div>
